@@ -129,6 +129,23 @@ body, html {
     white-space: nowrap;
 }
 
+/* Responsive Table Wrapper */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on mobile */
+}
+
+.table {
+    width: 100%;
+    table-layout: auto; /* Allow flexible column resizing */
+    margin-bottom: 1rem; /* Proper spacing below the table */
+}
+
+.table th, .table td {
+    white-space: nowrap; /* Prevent breaking words into multiple lines */
+    text-align: center;
+}
+
 /* Headings and Lists */
 h1, h2 {
     color: #333;
@@ -223,5 +240,9 @@ ul li::before {
 
     .footer {
         font-size: 0.75rem;
+    }
+
+    .table th, .table td {
+        padding: 0.5rem; /* Adjust padding for small screens */
     }
 }
