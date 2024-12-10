@@ -47,10 +47,14 @@ body, html {
     color: #fff;
     display: none;
 }
+.navbar-logo img {
+    height: 100px;
+    width: auto;
+}
+
 
 /* Hero Section */
 .hero {
-    background: url('{{ url_for("static", filename="assets/images/hero-bg.jpg") }}') center/cover no-repeat;
     height: 60vh;
     display: flex;
     align-items: center;
@@ -212,7 +216,9 @@ ul li::before {
 .logo {
     color: #dd0000;
 }
-
+.blue{
+    color: #38076a;
+}
 /* Responsive Media Queries */
 @media (max-width: 767px) {
     .navbar-brand {
@@ -228,6 +234,11 @@ ul li::before {
     .navbar-text {
         display: none;
     }
+    .navbar-logo img {
+        height: 40px;
+        width: auto;
+    }
+    
 
     .content {
         padding-top: 80px;
