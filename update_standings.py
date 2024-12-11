@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 from app import create_app, db
 from app.models import Standing
 import unicodedata
+from selenium import webdriver
+import os
+import time
 
 def extract_points_table():
     url = "https://en.wikipedia.org/wiki/2024_Nepal_Premier_League"
@@ -33,7 +36,6 @@ def extract_points_table():
         if len(cols_text) >= 8:
             points_table.append(cols_text[:8])
 
-    # Update the database
     with create_app().app_context():
         db.session.query(Standing).delete()  # Clear existing data
 
@@ -51,9 +53,34 @@ def extract_points_table():
                 nrr=nrr
             )
             db.session.add(new_team)
-        
+
         db.session.commit()
         print("Database updated successfully!")
+
+    generate_image(points_table)
+
+def generate_image(points_table):
+    IMG_FOLDER = 'app/static/assets/img'
+    os.makedirs(IMG_FOLDER, exist_ok=True)
+    
+    # Set up headless browser
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    #options.add_argument("--disable-dev-shm-usage")
+    driver = webdriver.Chrome(options=options)
+
+    # Render the table as a web page
+    driver.get("https://nplstandings.com")
+    driver.set_window_size(1000, 900)
+    time.sleep(2)  # Allow time for loading
+
+    # Capture screenshot
+    screenshot_path = os.path.join(IMG_FOLDER, 'standings.png')
+    driver.save_screenshot(screenshot_path)
+    driver.quit()
+
+    print(f"Generated image at: {screenshot_path}")
 
 if __name__ == "__main__":
     extract_points_table()
