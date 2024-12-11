@@ -42,7 +42,19 @@
         </div>
     </div>
 </div>
-
+<!-- Social Media Sharing Buttons -->
+<div class="share-buttons text-center mt-4">
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.url }}" target="_blank" class="btn btn-primary">
+        Share on Facebook
+    </a>
+    <a href="https://twitter.com/intent/tweet?url={{ request.url }}&text=Nepal%20Premier%20League%20Standings" target="_blank" class="btn btn-info">
+        Share on Twitter
+    </a>
+    <a href="https://www.facebook.com/dialog/send?link={{ request.url }}&app_id=YOUR_APP_ID&redirect_uri={{ request.url }}" 
+   target="_blank" class="btn btn-success">
+   Share on Messenger
+    </a>
+</div>
 <!-- Hero Section -->
 <div class="hero">
     <div class="container text-center">
