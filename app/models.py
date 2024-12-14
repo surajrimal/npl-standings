@@ -11,3 +11,18 @@ class Standing(db.Model):
     pts = db.Column(db.Integer, nullable=False)
     nrr = db.Column(db.Float, nullable=False)
     last_updated = db.Column(db.DateTime, default=db.func.now(), onupdate=db.func.now())
+
+
+        
+class Articles:
+    '''Define article model'''
+    def __init__(self, source, author, title, description, url, urlToImage, publishedAt):
+        self.source = source
+        self.author = author
+        self.title = title
+        self.description = description
+        self.url = url
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
+
+

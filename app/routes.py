@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
-from .models import Standing, db    
-
+from .models import Standing, db
+from .request import publishedArticles
 import os
+from . import cache
 
 main = Blueprint('main', __name__)
 
@@ -9,7 +10,6 @@ main = Blueprint('main', __name__)
 def home():
     standings = Standing.query.order_by(Standing.w.desc()).all()
     return render_template('home.html', standings=standings)
-
 
 
 @main.route('/termsofservice')
@@ -23,3 +23,10 @@ def privacy_policy():
 @main.route('/about')
 def about():
     return render_template('about.html')  # About Page
+
+@main.route('/news')
+@cache.cached(timeout=60*60)
+def news():
+    print("Cache hit")
+    articles = publishedArticles()
+    return  render_template('news.html', articles = articles)

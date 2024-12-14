@@ -52,7 +52,6 @@ body, html {
     width: auto;
 }
 
-
 /* Hero Section */
 .hero {
     height: 60vh;
@@ -133,7 +132,7 @@ body, html {
 .table th, .table td {
     text-align: center;
     padding: 5px;
-    word-wrap: break-word; /* Enable word wrapping to prevent overflow */
+    word-wrap: break-word;
 }
 
 .table th {
@@ -216,9 +215,7 @@ ul li::before {
 .logo {
     color: #dd0000;
 }
-.blue{
-    color: #38076a;
-}
+
 /* Responsive Media Queries */
 @media (max-width: 767px) {
     .navbar-brand {
@@ -238,7 +235,6 @@ ul li::before {
         height: 40px;
         width: auto;
     }
-    
 
     .content {
         padding-top: 80px;
@@ -251,10 +247,67 @@ ul li::before {
 
     .table th, .table td {
         padding: 6px;
-        font-size: 0.75rem; /* Adjust font size to fit smaller devices */
+        font-size: 0.75rem;
     }
 
     .footer {
         font-size: 0.75rem;
     }
+}
+
+/* Custom Styles for News Page */
+.container {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+h1.text-center {
+    color: #343a40;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.card {
+    background: #ffffff;
+    color: #343a40;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #dd0000;
+}
+
+.card-text {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.date-label {
+    font-weight: bold;
+    color: #555;
+}
+
+a {
+    text-decoration: none;
+    color: #343a40;
+}
+
+a:hover {
+    color: #dd0000;
+    text-decoration: underline;
+}
+
+.card-footer {
+    background: #f1f1f1;
+    border-top: 1px solid #ddd;
+    padding: 0.5rem;
 }
