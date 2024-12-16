@@ -36,8 +36,10 @@
                             </tbody>
                         </table>
                     </div>
-                    <span class="blue"> (E) Eliminated from play-off race.</span> <br>
+                    <div class="base">
+                    <span class="logo"> (E) Eliminated from play-off race.</span> <br>
                     <span class="blue"> (Q) Advance to Qualifier. </span>
+                    </div>
                     <!-- Social Media Share Links -->
                     <div class="share-buttons text-center mt-4">
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.url_root }}" 
@@ -52,6 +54,23 @@
     </div>
 </div>
 
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Latest News</h1>
+    <div class="row">
+        {% for source, title, desc, author, img, p_date, url in articles %}
+        <div class="col-12 mb-3">
+            <div>
+                <a href="{{ url }}" target="_blank" class="text-decoration-none text-white">
+                    <h2 class="mb-1"><b>{{ title }}</b></h2>
+                </a>
+                <p class="mb-1">{{ desc }}</p>
+                <p class="mb-0 text-muted"><small>Date Published: {{ p_date }}</small></p>
+                <p class="mb-0 text-muted"><small>Author: {{ author }}</small></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 <!-- Hero Section -->
 <div class="hero">
     <div class="container text-center">

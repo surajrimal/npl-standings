@@ -36,3 +36,7 @@ def publishedArticles():
     # Create zipped content
     contents = zip(source, title, desc, author, img, p_date, url)
     return contents
+
+def publishedArticlesFive():
+    articles = list(publishedArticles())
+    return articles[:5]

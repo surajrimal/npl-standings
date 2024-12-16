@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from .models import Standing, db
-from .request import publishedArticles
+from .request import publishedArticles, publishedArticlesFive
 import os
 from . import cache
 
@@ -9,7 +9,9 @@ main = Blueprint('main', __name__)
 @main.route('/')
 def home():
     standings = Standing.query.order_by(Standing.w.desc()).all()
-    return render_template('home.html', standings=standings)
+    articles=publishedArticlesFive()
+    #articles = list(zip(articles))[:5] 
+    return render_template('home.html', standings=standings, articles=articles)
 
 
 @main.route('/termsofservice')
