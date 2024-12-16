@@ -116,7 +116,7 @@ body, html {
 
 /* Content Styles */
 .content {
-    padding-top: 120px;
+    padding-top: 100px;
     padding-bottom: 30px;
     min-height: calc(100vh - 240px);
     padding: 2px;
@@ -245,13 +245,21 @@ ul li::before {
     }
 
     .table {
+        width: 100%;
         font-size: 0.8rem;
-        padding: 0.5px;
+        margin: 0;
+        padding: 0;
+        border-collapse: collapse;
     }
 
     .table th, .table td {
-        padding: 6px;
+        padding: 4px;
+        margin: 0;
         font-size: 0.75rem;
+        white-space: nowrap;  /* Prevents wrapping */
+    }
+    .table-responsive {
+        overflow-x: auto; /* Enables horizontal scrolling */
     }
 
     .footer {
