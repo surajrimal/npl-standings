@@ -258,6 +258,9 @@ ul li::before {
     .footer {
         font-size: 0.75rem;
     }
+    .base{
+        font-size: 0.75rem;
+    }
 }
 
 /* Custom Styles for News Page */
