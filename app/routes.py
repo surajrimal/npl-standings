@@ -7,6 +7,7 @@ from . import cache
 main = Blueprint('main', __name__)
 
 @main.route('/')
+@cache.cached(timeout=60*60)
 def home():
     standings = Standing.query.order_by(Standing.w.desc()).all()
     articles=publishedArticlesFive()
