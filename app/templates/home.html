@@ -25,7 +25,13 @@
                                 {% for standing in standings %}
                                 <tr class="table-light">
                                     <td>{{ loop.index }}</td>
-                                    <td>{{ standing.team }}</td>
+                                    <td>{{ standing.team }}
+                                        {% if loop.index <= 4 %}
+                                            (Q)
+                                        {% elif loop.index > 4 and loop.index <= 8 %}
+                                            (E)
+                                        {% endif %}
+                                    </td>
                                     <td>{{ standing.pld }}</td>
                                     <td>{{ standing.w }}</td>
                                     <td>{{ standing.l }}</td>
