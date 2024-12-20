@@ -22,7 +22,7 @@ def publishedArticles():
         #print(f"Processing article: {article['title']}, Image URL: {article['urlToImage']}")
 
         # Filter for articles with images and the word "NPL" in the title
-        if any(x in article['title'].upper() for x in matches):
+        if any(x in article['description'].upper() for x in matches):
             source.append(article['source']['name'] if article['source'] else "Unknown")
             title.append(article['title'])
             desc.append(article['description'])
