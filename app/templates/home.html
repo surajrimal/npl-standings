@@ -1,12 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container mt-5">
+<p>The 2024 Nepal Premier League (NPL) tournament features 8 teams competing in 32 matches from
+     30 November to 21 December 2024.
+     The tournament used a round-robin format, with the top teams advancing to the playoffs.</p>
+</div>
+<div class="container mt-5">
+    <h2 text-center mb-4 text-secondary>Nepal Premier League 2024 Play-offs</h2>
+    <!-- Image Display -->
+    <div class="text-center" >
+        <img src="{{ url_for('static', filename='assets/img/playoff.png') }}" 
+             alt="Play-offs Bracket" 
+             class="img-fluid" 
+             style="border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+    </div>
+</div>
+
 <!-- Standings Section -->
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-lg-10 col-md-12">
             <div class=" shadow-sm border-light rounded">
-                    <h2 class="text-center mb-4 text-secondary">Nepal Premier League 2024 - Current Standings</h2>
+                    <h2 class="text-center mb-4 text-secondary">Nepal Premier League 2024 - League Standings</h2>
 
                     <!-- Responsive Wrapper -->
                     <div id="standingsContainer" class="table-responsive">
@@ -55,20 +71,6 @@
                     </div>
                 </div>
         </div>
-    </div>
-</div>
-<div class="container mt-5">
-    <h2>Play-offs</h2>
-    <p style="font-style: italic; color: gray;">
-        All times are in <span style="color: blue; font-weight: bold;">Nepal Standard Time (UTC+05:45)</span>.
-    </p>
-
-    <!-- Image Display -->
-    <div class="text-center" >
-        <img src="{{ url_for('static', filename='assets/img/playoff.png') }}" 
-             alt="Play-offs Bracket" 
-             class="img-fluid" 
-             style="border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
     </div>
 </div>
 
