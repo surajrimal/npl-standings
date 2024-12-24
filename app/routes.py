@@ -25,7 +25,8 @@ def privacy_policy():
 
 @main.route('/about')
 def about():
-    return render_template('about.html')  # About Page
+    standings = Standing.query.order_by(Standing.w.desc()).all()
+    return render_template('about.html', standings=standings)  # About Page
 
 @main.route('/news')
 @cache.cached(timeout=60*60)
