@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash
+from flask import Blueprint, render_template, redirect, url_for, request, flash, send_from_directory
 from .models import Standing, db
 from .request import publishedArticles, publishedArticlesFive
 import os
@@ -14,6 +14,9 @@ def home():
     #articles = list(zip(articles))[:5] 
     return render_template('home.html', standings=standings, articles=articles)
 
+@main.route('/ads.txt')
+def ads_txt():
+    return send_from_directory('static', 'ads.txt')
 
 @main.route('/termsofservice')
 def terms_of_service():
