@@ -16,7 +16,7 @@ def publishedArticles():
     p_date = []
     url = []
     
-    matches = ["NPL","NEPAL"]
+    matches = [""]
     for article in all_articles:
         # Debugging step to inspect image URLs and headlines
         #print(f"Processing article: {article['title']}, Image URL: {article['urlToImage']}")
