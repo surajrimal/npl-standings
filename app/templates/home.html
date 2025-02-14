@@ -1,13 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-5">
-<p>The 2024 Nepal Premier League (NPL) tournament features 8 teams competing in 32 matches from
-     30 November to 21 December 2024.
-     The tournament used a round-robin format, with the top teams advancing to the playoffs.</p>
+<!-- Exciting Announcement for 2025 NPL -->
+<div class="container mt-5 text-center">
+    <h1 class="text-primary">Get Ready for Nepal Premier League 2025!</h1>
+    <p class="lead">The excitement continues! Bigger teams, more thrilling matches, and unforgettable moments await in the 2025 season.</p>
+    <p>Stay tuned for official announcements, team line-ups, and match schedules as we gear up for another spectacular tournament.</p>
+    <a href="{{ url_for('main.news') }}" class="btn btn-success mt-3">Learn More</a>
 </div>
+
 <div class="container mt-5">
-    <h2 text-center mb-4 text-secondary>Nepal Premier League 2024 Play-offs</h2>
+<h1 class="text-primary">Nepal Premier League 2024 Recap</h1>
+<p>The 2024 Nepal Premier League (NPL) was an electrifying tournament that kept fans on the edge of their seats. Featuring 8 competitive teams, the league saw 32 action-packed matches between November 30 and December 21, 2024. The round-robin format ensured every team got a fair shot at proving their mettle, with only the top performers advancing to the high-stakes playoffs.</p>
+<p>The league was filled with stunning upsets, breathtaking finishes, and standout performances from some of Nepal’s finest cricketing talents. Each match carried immense weight as teams battled fiercely for a spot in the playoffs. The intensity on the field was matched by the unwavering passion of the fans, who showed up in record numbers, making the 2024 edition one of the most successful yet.</p>
+</div>
+
+<div class="container mt-5">
+    <h2 text-center mb-4 text-secondary>Nepal Premier League 2024 Play-offs Recap</h2>
+    <p>The playoffs were a rollercoaster of emotions, with nail-biting encounters that had fans glued to their screens. The top four teams clashed in intense battles, displaying grit, skill, and determination. The grand finale saw the dominant Janakpur Bolts taking on the spirited Sudurpaschim Royals in an unforgettable championship match. With nerves of steel and remarkable teamwork, Janakpur Bolts emerged victorious, claiming the 2024 NPL title and etching their names in history.</p>
     <!-- Image Display -->
     <div class="text-center" >
         <img src="{{ url_for('static', filename='assets/img/playoff.png') }}" 
@@ -22,7 +32,8 @@
     <div class="row justify-content-center">
         <div class="col-lg-10 col-md-12">
             <div class=" shadow-sm border-light rounded">
-                    <h2 class="text-center mb-4 text-secondary">Nepal Premier League 2024 - League Standings</h2>
+                    <h2 class="text-center mb-4 text-secondary">Nepal Premier League 2024 - League Standings Recap</h2>
+                    <p>The standings reflected the competitive nature of the league, with teams constantly shifting positions throughout the tournament. Every match played a crucial role in shaping the leaderboard, keeping fans on the edge of their seats.</p>
                     <span class="logo"> <strong>Eventual champion = Janakpur Bolts </strong> </span><br>
                     <span class="logo"> Runner-up = Sudurpaschim Royals </span>
                     <!-- Responsive Wrapper -->
@@ -61,7 +72,6 @@
                     <div class="base">
                     <span class="logo"> (E) Eliminated from play-off race.</span> <br>
                     <span class="blue"> (Q) Advance to Qualifier. </span>
-                    
                     </div>
                     <!-- Social Media Share Links -->
                     <div class="share-buttons text-center mt-4">
@@ -96,11 +106,12 @@
 <!-- Hero Section -->
 <div class="hero">
     <div class="container text-center">
-        <h1>Nepal Premier League 2024</h1>
+        <h1>Nepal Premier League</h1>
         <p>Your Ultimate Source for Real-Time Standings. Stay Updated with the Latest Nepal Premier League Results</p>
-        <a href="{{ url_for('main.about') }}" class="btn btn-custom mt-3">Learn More</a>
+        <a href="{{ url_for('main.recap2024') }}" class="btn btn-custom mt-3">Learn More</a>
         <a href="{{ url_for('main.news') }}" class="btn btn-custom mt-3">Latest News</a>
     </div>
 </div>
+
 
 {% endblock %}

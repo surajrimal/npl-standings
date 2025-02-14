@@ -23,6 +23,12 @@ def terms_of_service():
 def privacy_policy():
     return render_template('privacy.html')
 
+@main.route('/recap2024')
+def recap2024():
+    standings = Standing.query.order_by(Standing.w.desc()).all()
+    return render_template('recap2024.html', standings=standings)  # recap Page
+
+
 @main.route('/about')
 def about():
     standings = Standing.query.order_by(Standing.w.desc()).all()
