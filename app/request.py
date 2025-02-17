@@ -3,6 +3,14 @@ from newsapi import NewsApiClient
 from .config import Config
 from datetime import datetime
 
+import os
+from hashlib import sha256
+
+def generate_csrf_token():
+    if '_csrf_token' not in session:
+        session['_csrf_token'] = sha256(os.urandom(64)).hexdigest()
+    return session['_csrf_token']
+
 def publishedArticles():
     newsapi = NewsApiClient(api_key=Config.API_KEY)
     get_articles = newsapi.get_everything(q='Nepal Premier League', sort_by='publishedAt', page_size=40)
