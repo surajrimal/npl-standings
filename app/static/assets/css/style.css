@@ -220,9 +220,11 @@ ul li::before {
 .logo {
     color: #dd0000;
 }
+
 .blue {
     color: #040312ca;
 }
+
 /* Responsive Media Queries */
 @media (max-width: 767px) {
     .navbar-brand {
@@ -260,7 +262,7 @@ ul li::before {
     .footer {
         font-size: 0.75rem;
     }
-    .base{
+    .base {
         font-size: 0.75rem;
     }
 }
@@ -301,4 +303,55 @@ a {
 a:hover {
     color: #dd0000;
     text-decoration: underline;
+}
+
+/* --- Enhanced News Card Styles --- */
+.news-card {
+    background: #ffffff;
+    color: #343a40;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.news-card .card-title {
+    color: #dd0000;
+    font-weight: bold;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+}
+
+.news-card .card-title:hover {
+    color: #a30000;
+}
+
+.news-card .source {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.news-card .description {
+    font-size: 0.95rem;
+    color: #555;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-card .author,
+.news-card .published {
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+.news-card .card-footer {
+    background: #f8f9fa;
+    border-top: 1px solid #ddd;
 }
