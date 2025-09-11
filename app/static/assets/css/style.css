@@ -94,9 +94,9 @@ body, html {
     transform: scale(1.05);
 }
 
-/* Card Design */
+/* Card Design (default, non-news) */
 .card {
-    background: #f1ddd4; /* Default background for non-news cards */
+    background: #f1ddd4;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
@@ -223,6 +223,7 @@ ul li::before {
 .blue {
     color: #040312ca;
 }
+
 /* Responsive Media Queries */
 @media (max-width: 767px) {
     .navbar-brand {
@@ -265,7 +266,9 @@ ul li::before {
     }
 }
 
-/* Custom Styles for News Page */
+/* ------------------------------
+   Custom Styles for News Page
+------------------------------- */
 .container {
     background: #f9f9f9;
     padding: 2rem;
@@ -278,27 +281,65 @@ h1.text-center {
     font-weight: bold;
 }
 
+/* Override card just for news */
 .container .card {
-    background: #ffffff; /* News page card background */
-    color: #343a40;
+    background: #212529; /* dark card for news */
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+.container .card img {
+    height: 200px;
+    object-fit: cover;
 }
 
 .container .card-title {
-    color: #dd0000; /* Red color for news card title */
+    color: #dd0000;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-top: 8px;
+}
+
+.container .card-text.source {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #f0ad4e;
+}
+
+.container .card-text.published {
+    font-size: 0.85rem;
+    color: #bbb;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .container .card-footer {
-    background: #f1f1f1;
-    border-top: 1px solid #ddd;
-    padding: 0.5rem;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-a {
-    text-decoration: none;
-    color: #343a40;
+.date-label {
+    font-weight: 600;
+    margin-right: 4px;
 }
 
-a:hover {
-    color: #dd0000;
-    text-decoration: underline;
+.date {
+    color: #fff;
+}
+
+/* Truncate description for uniform cards */
+.container .card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* show 3 lines max */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
